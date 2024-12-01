@@ -133,7 +133,7 @@ function Loading() {
         boton.style.transform = `translate(calc(50vw - 6rem), calc(100vh - 5rem - 14rem - 1.5rem + 200px))`;
       } else {
         className = 'normal';
-        boton.innerHTML = "Contactanos";
+        boton.innerHTML = "Contact Us";
         boton.style.transform = `translate(0px, 0px)`;
       }
       dispatch({
@@ -150,7 +150,7 @@ function Loading() {
         <h1>We are WebDeveloment!</h1>
         <p>A team of passionate developers</p>
         <div className='buttonContainer'>
-          <button id="boton" color="info" className={`outline waves-effect ${clase}`}>Contactanos</button>
+          <button id="boton" color="info" className={`outline waves-effect ${clase}`}>Contact Us</button>
         </div>
       </div>
       <div style={{ height: "65vh" }}></div>
