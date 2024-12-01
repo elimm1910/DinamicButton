@@ -72,9 +72,9 @@ function Footer() {
     return (
         <FooterStyled>
             <div className='contenedor'>
-            <img src="fondo3.jpg" alt='img' />
-            <h1>Interested to work with us?</h1>
-            <button color="info" className='outline'>Contactanos</button>
+                <img src="fondo3.jpg" alt='img' />
+                <h1>Interested to work with us?</h1>
+                <button color="info" className='outline'>Contactanos</button>
             </div>
         </FooterStyled>
     );

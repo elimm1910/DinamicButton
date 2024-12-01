@@ -26,6 +26,17 @@ const LoadingStyled = styled.div`
     height: 100%;
     z-index: -1;
   }
+  .Container{
+    width: 100%;
+    height: 14rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .buttonContainer{
+    height: 3rem;
+  }
   .outline{
       color:rgb(50, 4, 59);
       background:white;
@@ -33,7 +44,9 @@ const LoadingStyled = styled.div`
       -webkit-border-radius:28;
       -moz-border-radius:28;
       border-radius:28px;
-      padding: 10px 32px;
+      // padding: 10px 32px;
+      width: 12rem;
+      height: 3rem;
       text-align: center;
       display:inline-block;
       font-size:24px;
@@ -61,25 +74,6 @@ const LoadingStyled = styled.div`
       transition:0.5s;
       z-index:100;
   }
-  ${'' /* .footer{
-      color:white;
-      background:rgb(236, 56, 191);
-      border:none;
-      -webkit-border-radius:28;
-      -moz-border-radius:28;
-      border-radius:28px;
-      padding: 10px 32px;
-      text-align: center;
-      display:inline-block;
-      font-size:24px;
-      position:fixed;
-      margin-bottom:16px;
-      transition:0.5s;
-  } */}
-  ${'' /* .footer:hover{
-      background: rgb(236, 56, 191);
-      color: white;
-  } */}
   .espacio{
       height:window.height();
   }
@@ -129,28 +123,14 @@ function Loading() {
     let className = 'normal';
     var boton = document.getElementById('boton');
     let heihtTop = boton.offsetTop;
-    let widthLeft = boton.offsetLeft;
-    let marginright = 30;
-    let marginBottom = 50;
-    if (window.innerWidth < 600) {
-      marginright = -10;
-    }
-    if (window.innerHeight < 600) {
-      marginBottom = 30;
-    }
-    // if (window.innerHeight < 400) {
-    //   marginBottom = 15;
-    // }
 
-    let heightBottom = window.innerHeight - heihtTop - boton.offsetHeight - marginBottom;
-    let widthRight = window.innerWidth - widthLeft - boton.offsetWidth - marginright;
     window.addEventListener('scroll', (event) => {
       if (document.documentElement.scrollTop > heihtTop && (document.documentElement.scrollHeight - document.documentElement.scrollTop) > window.innerHeight) {
         className = 'flotante';
         boton.innerHTML = '<i class="fa fa-envelope" </i>';
-        boton.style.transform = `translate(${widthRight}px, ${heightBottom}px)`;
+        boton.style.transform = `translate(calc(50vw - 6rem), calc(100vh - 5rem - 14rem - 1.5rem))`;
       } else if ((document.documentElement.scrollHeight - document.documentElement.scrollTop) <= window.innerHeight) {
-        boton.style.transform = `translate(${widthRight}px, ${heightBottom + 200}px)`;
+        boton.style.transform = `translate(calc(50vw - 6rem), calc(100vh - 5rem - 14rem - 1.5rem + 200px))`;
       } else {
         className = 'normal';
         boton.innerHTML = "Contactanos";
@@ -165,15 +145,15 @@ function Loading() {
   }, [])
   return (
     <LoadingStyled>
-      <div>
-        <div>
-          <img src="fondo2.jpg" alt='img' />
-          <h1>We are WebDeveloment!</h1>
-          <p>A team of passionate developers from Cuba</p>
+      <div className='Container'>
+        <img src="fondo2.jpg" alt='img' />
+        <h1>We are WebDeveloment!</h1>
+        <p>A team of passionate developers</p>
+        <div className='buttonContainer'>
           <button id="boton" color="info" className={`outline waves-effect ${clase}`}>Contactanos</button>
-          <div style={{ height: (window.innerHeight) * 0.65 }}></div>
         </div>
       </div>
+      <div style={{ height: "65vh" }}></div>
     </LoadingStyled>
   );
 }
