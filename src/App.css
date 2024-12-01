@@ -1,0 +1,11 @@
+.navbar.transparent{
+  border-width: 0px;
+  -webkit-box-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+  background: transparent;
+}
+.r{
+  margin-right: 0px !important;
+}
+
+
