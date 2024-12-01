@@ -17,7 +17,7 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <Router>
+        <Router basename="/DinamicButton/">
           <Navegacion />
           <Routes>
             <Route path="/" element={<Home />} />
