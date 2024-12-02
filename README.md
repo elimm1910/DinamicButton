@@ -8,4 +8,4 @@ Libraries Used:
 - react-redux
 - mdbreact
 
-[Desktop Navigation in Action](./videos/Desktop.gif)
+[Desktop Navigation in Action](./video/Desktop.gif)
